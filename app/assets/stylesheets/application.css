@@ -13,3 +13,228 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .bloc_left_price {
+  color: #c01508;
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+.category_block li:hover {
+  background-color: #007bff;
+}
+.category_block li:hover a {
+  color: #ffffff;
+}
+.category_block li a {
+  color: #343a40;
+}
+.add_to_cart_block .price {
+  color: #c01508;
+  text-align: center;
+  font-weight: bold;
+  font-size: 200%;
+  margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+  color: #343a40;
+  text-align: center;
+  text-decoration: line-through;
+  font-size: 140%;
+}
+.product_rassurance {
+  padding: 10px;
+  margin-top: 15px;
+  background: #ffffff;
+  border: 1px solid #6c757d;
+  color: #6c757d;
+}
+.product_rassurance .list-inline {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+  color: #343a40;
+}
+.reviews_product .fa-star {
+  color: gold;
+}
+.pagination {
+  margin-top: 20px;
+}
+
+.carousel-inner {
+  border-radius: 20px;
+  border: 5px solid rgb(255, 255, 255);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card {
+  border-radius: 20px;
+  border: 5px solid rgb(255, 255, 255);
+  margin-top: 20px;
+}
+
+.card > .text-white {
+  color: #17a2b8!important;
+}
+
+.card > .card-header:first-child {
+  border-radius: 15px;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.bg-light {
+  background-color: white!important;
+}
+
+.navbar {
+  border-bottom: 3px solid black;
+  height: 55px;
+}
+
+.footer-distributed {
+  background-color: #F8F9FA;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 25px 50px;
+  border-top: 3px solid rgb(0, 0, 0);
+}
+
+.footer-distributed .footer-left p {
+  color: #6e6e6e;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease 0.25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease 0.25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #F8F9FA;
+  border-radius: 2px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition: all 0.25s;
+}
+
+.footer-distributed .footer-right a:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+.footer-distributed p.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
+
+.btn-warning {
+  background-color: white !important;
+  border-color: white !important;
+}
+
+.wrapper {
+  margin: 10vh;
+}
+
+
+
+.fond {
+  background: url(https://images.pexels.com/photos/2558605/pexels-photo-2558605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+    no-repeat center center;
+  background-size: 100%;
+  position: absolute; /* Le fond est fixé en haut de la page */
+  width: 100%; /* Il occupe toute la largeur de l'écran */
+  height: 400px; /* On met ici la même hauteur que le jumbotron */
+  top: 30px;
+  left: 0;
+  z-index: -1;
+  border-bottom: 5px solid white;
+  margin-top: 20px;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  height: 400px;
+  color: rgb(255, 255, 255); /* Le texte sera affiché en blanc */
+  text-shadow: black 0.3em 0.3em 0.3em;
+  background: transparent;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  margin-top: 90px;
+  text-align: center;
+  font-size: 120px;
+}
+
+.jumbotron p {
+  margin-top: 45px;
+  text-align: center;
+  font-size: 60px;
+}

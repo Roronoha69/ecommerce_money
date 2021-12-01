@@ -5,7 +5,7 @@ class OrderItemsController < ApplicationController
         @order = current_order
         @order_item = @order.order_items.new(order_params)
         @order.save
-        #session[:order_id] = @order.id
+        session[:order_id] = @order.id
     end
 
 
