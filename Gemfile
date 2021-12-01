@@ -10,7 +10,7 @@ gem 'devise'
 gem 'stripe'
 gem "letter_opener", group: :development
 gem 'bootstrap-sass'
-
+gem 'jquery-rails', '~> 4.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'

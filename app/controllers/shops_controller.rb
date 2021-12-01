@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:id])
   end
+  
 end
