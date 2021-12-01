@@ -100,6 +100,18 @@
   height: 55px;
 }
 
+footer {
+  bottom: 0px;
+   left: 0px;
+    right: 0px;
+  height: 100px;
+}
+
+.col-md-12 {
+  margin-bottom: 200px;
+  margin-top: 200px;
+}
+
 .footer-distributed {
   background-color: #F8F9FA;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -238,3 +250,4 @@
   text-align: center;
   font-size: 60px;
 }
+
