@@ -1,0 +1,58 @@
+<%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+    <!-- Main -->
+    <div class="main">
+        <h2>Vos Informations</h2>
+        <a><%=link_to "Editer le profil", edit_user_registration_path, class: 'btn btn-outline-success' %></a>
+        <div class="card-flow">
+            <div class="card-body">
+                <i class="fa fa-pen fa-xs edit"></i>
+                <table>
+                    <tbody>
+
+                        <tr>
+                            <td>Email</td>
+                            
+                            <td>: <%= current_user.email %></td>
+                        </tr>
+                        <tr>
+                            <td>Nom</td>
+                            
+                            <td>: </td>
+                        </tr>
+                        <tr>
+                            <td>Prénom</td>
+                            
+                            <td>: </td>
+                        </tr>
+                        <tr>
+                            <td>Adresse</td>
+                            
+                            <td>: </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+
+        <h2>Votre historique de commandes</h2>
+        <div class="card-flow">
+            <div class="card-body">
+              <p>Futur histoire a config</p>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+<center>
+<div class="margin" style="margin-bottom: 100px;">
+<%= link_to "Retour accueil", :back, class: 'btn btn-outline-info' %>
+</div>
+</center>
+
+</body>

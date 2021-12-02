@@ -1,211 +1,59 @@
 
 
 
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
-
-
-
-<% @order_items.each do |item| %>
-
-  <h3><%= item.product.title %></h3>
-  <h5><%= item.product.price %></h5>
-
-  <%= form_for item, remote: :true do |f| %>
-
-    <%= f.hidden_field :product_id, :value => item.product.id%>
-    <%= f.number_field :quantity, :value => item.quantity.to_i%>
-    <%= f.submit "Actualise ton panier"%>
-
-    <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: :true %>
-    
-
-
-  <% end %>
-
-
-  <h2>Subtotal: <%= item.total%> €</h2>
 
 
 
 
-<% end %>
 
 
-<h3>Your current card value has a subtotal of: <%= current_order.subtotal %></h3>
 
-<!--<div class="container mb-4">
+
+<div class="container-fluid main-section">
     <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Available</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Dada</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">124,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Toto</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">33,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Titi</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">70,00 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Sub-Total</td>
-                            <td class="text-right">255,90 €</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Shipping</td>
-                            <td class="text-right">6,90 €</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>346,90 €</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="col-lg-12 pb-2">
+            <h4>Ton panier</h4>
         </div>
-        <div class="col mb-2">
-            <div class="row">
-                <div class="col-sm-12  col-md-6">
-                    <button class="btn btn-block btn-light">Continue Shopping</button>
-                </div>
-                <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
-                </div>
-            </div>
+        <div class="col-lg-12 pl-3 pt-3">
+            <table class="table table-hover border bg-white">
+                <thead>
+                    <tr>
+                    <th>Title</th>
+                    <th>Prix</th>
+                    <th style="width:10%;">Quantité</th>
+                    <th>Ajouter au panier</th>
+                    <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @order_items.each do |item| %>
+                    <tr>
+                        <td>
+                        <% if item.product %>
+                            <div class="row">
+                                <div class="col-lg-10">
+                                   <h3><%= item.product.title %></h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td><h5><%= item.product.price %></h5></td>
+                        <td>
+                            <%= form_for item, remote: :true do |f| %>
+
+                                <%= f.hidden_field :product_id, :value => item.product.id%>
+                                <%= f.number_field :quantity, :value => item.quantity.to_i%>
+
+                              <td><%= f.submit "Actualise ton panier"%></td>
+                             
+                            <% end %>
+                            <% end %>
+                        <td><%= link_to "Remove Items", order_item_path(item), method: :delete, remote: :true %></td>
+                    </tr> <td>Subtotal: <%= item.total %></td>
+                    <% end %>
+                
+                
+            </table>
         </div>
     </div>
-</div>-->
-
-<!--<%= stylesheet_link_tag    "styles", :media => "all" %>-->
-
-
-
-
-
-
-<center>
-
-    <div class="col-md-5">
-        <div class="card border-0 ">
-            <div class="card-header card-2">
-                <p class="card-text text-muted mt-md-4 mb-2 space">COMMANDE <span class=" small text-muted ml-2 cursor-pointer">DETAIL DE VOTRE COMMANDE</span> </p>
-                <hr class="my-2">
-            </div>
-            <div class="card-body pt-0">
-                <div class="row justify-content-between">
-                    <div class="col-auto col-md-7">
-                        <div class="media flex-column flex-sm-row"> <img class=" img-fluid" src="https://i.imgur.com/6oHix28.jpg" width="62" height="62">
-                            <div class="media-body my-auto">
-                                <div class="row ">
-                                    <div class="col-auto">
-                                        <p class="mb-0"><b>EC-GO Bag Standard</b></p><small class="text-muted">1 Week Subscription</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" pl-0 flex-sm-col col-auto my-auto">
-                        <p class="boxed-1">2</p>
-                    </div>
-                    <div class=" pl-0 flex-sm-col col-auto my-auto ">
-                        <p><b>179 €</b></p>
-                    </div>
-                </div>
-                <hr class="my-2">
-                <div class="row justify-content-between">
-                    <div class="col-auto col-md-7">
-                        <div class="media flex-column flex-sm-row"> <img class=" img-fluid " src="https://i.imgur.com/9MHvALb.jpg" width="62" height="62">
-                            <div class="media-body my-auto">
-                                <div class='row'>
-                                    <div class="col">
-                                        <p class="mb-0"><b>EC-GO Bag Standard</b></p><small class="text-muted">2 Week Subscription</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pl-0 flex-sm-col col-auto my-auto">
-                        <p class="boxed">3</p>
-                    </div>
-                    <div class="pl-0 flex-sm-col col-auto my-auto">
-                        <p><b>179 €</b></p>
-                    </div>
-                </div>
-                <hr class="my-2">
-                <div class="row justify-content-between">
-                    <div class="col-auto col-md-7">
-                        <div class="media flex-column flex-sm-row"> <img class=" img-fluid " src="https://i.imgur.com/6oHix28.jpg" width="62" height="62">
-                            <div class="media-body my-auto">
-                                <div class="row ">
-                                    <div class="col">
-                                        <p class="mb-0"><b>EC-GO Bag Standard</b></p><small class="text-muted">2 Week Subscription</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pl-0 flex-sm-col col-auto my-auto">
-                        <p class="boxed-1">2</p>
-                    </div>
-                    <div class="pl-0 flex-sm-col col-auto my-auto">
-                        <p><b>179 €</b></p>
-                    </div>
-                </div>
-                <hr class="my-2">
-                <div class="row ">
-                    <div class="col">
-                        <div class="row justify-content-between">
-                            <div class="col-4">
-                                <p><b>Total</b></p>
-                            </div>
-                            <div class="flex-sm-col col-auto">
-                                <p class="mb-1"><b>537 €</b></p>
-                            </div>
-                        </div>
-                        <hr class="my-0">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</center>    
+</div>              
+<h3>Ton panier est de: <%= current_order.subtotal %>€</h3>

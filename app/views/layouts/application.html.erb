@@ -31,7 +31,9 @@
             <ul class="nav navbar-nav navbar-right">
     
    <% if current_user %>
+    <li><%= link_to "Mon profil", users_show_path, class: 'nav-link' %></li>
     <li><%= button_to "Déconnexion", root_path,  method: :delete, class: 'btn btn-outline-danger', style: "margin: 10px" %></li>
+    
     
 
   <% else %>
@@ -43,7 +45,7 @@
                         </button>
                     </div>
                 </div>
-                <a class="btn btn-warning btn-sm ml-3" href="cards">
+                <a class="btn btn-warning btn-sm ml-3" href="<%= cards_show_path() %>">
                     <i class="fa fa-shopping-cart"></i> Panier
                     <span class="badge badge-light"></span>
                 </a>
@@ -61,31 +63,11 @@
 		<footer class="footer-distributed">
 
 			<div class="footer-right">
-
-				
-				
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
-
+      Projet - The Hacking Project
 			</div>
 
-			<div class="footer-left">
-
-				<p class="footer-links">
-					<a class="link-1" href="#"></a>
-
-					<a href="#">Home</a>
-
-					<a href="#">Catégories</a>
-
-					<a href="#">Panier</a>
-
-					<a href="#">Contact</a>
-
-					<a href="#">Aller au diable ?</a>
-				</p>
-
-				<p>Cute&Cat's &copy; 2021</p>
+			<div class="footer-left" style="margin-top: 10px;">
+				Cute&Cat's &copy; 2021
 			</div>
 
 		</footer>

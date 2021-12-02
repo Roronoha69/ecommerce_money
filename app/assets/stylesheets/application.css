@@ -101,10 +101,10 @@
 }
 
 footer {
-  bottom: 0px;
-   left: 0px;
-    right: 0px;
-  height: 100px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  
 }
 
 .col-md-12 {
@@ -251,3 +251,60 @@ footer {
   font-size: 60px;
 }
 
+.title {
+  font-family: 'Dancing Script', cursive;
+  padding-top: 15px;
+  position: absolute;
+  left: 45%;
+}
+
+.icon-count {
+  background-color: #ff0000;
+  color: #fff;
+  float: right;
+  font-size: 11px;
+  left: -25px;
+  padding: 2px;
+  position: relative;
+}
+/* Main */
+.main {
+  margin-top: 2%;
+  margin-left: 29%;
+  font-size: 28px;
+  padding: 0 10px;
+  width: 58%;
+}
+
+.main h2 {
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.main .card-flow {
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 1px 1px 8px 0 grey;
+  height: auto;
+  margin-bottom: 60px;
+  margin-top: 40px;
+  padding: 20px 0 20px 50px;
+  border: none;
+  font-size: 16px;
+  height: 270px;
+  width: 80%;
+}
+
+.edit {
+  position: absolute;
+  color: #e7e7e8;
+  right: 14%;
+}
+
+td {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
