@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :order_items
   resources :cards, only:[:show]
   resources :charges
-  resources :users, only: [:show, :edit, :update]
+  
 
 
 
