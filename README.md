@@ -1,24 +1,31 @@
-# README
+# Projet : boutique e-commerce
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](https://media.discordapp.net/attachments/298126382314029057/916022896248369212/cutecats.png?width=1074&height=528)
 
-Things you may want to cover:
+Projet : boutique e-commerce, The Hacking Project
 
-* Ruby version
+## Fonctionnalités Local
 
-* System dependencies
+- All Front sur les pages
+- Sign in / Sign up
+- Panier
+- Stripe
+- Edit User, Show User
+- ActionMailer
 
-* Configuration
+## Fonctionnalités Heroku
 
-* Database creation
+- All Front sur les pages
+- Panier
+- Stripe
+- Edit User, Show User
 
-* Database initialization
+## Team 100Code
 
-* How to run the test suite
+Enjoy sur notre site
 
-* Services (job queues, cache servers, search engines, etc.)
+Lucas, Valentin, Justin, Quentin, Romuald.
 
-* Deployment instructions
+## Lien Heroku
 
-* ...
+<a href="https://chatcommerce.herokuapp.com/">ChatCommerce by 100Code</a>
