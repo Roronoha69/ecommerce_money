@@ -1,14 +1,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <div class="container-fluid main-section">
     <div class="row">
         <div class="col-lg-12 pb-2">
@@ -40,20 +32,34 @@
                         <td>
                             <%= form_for item, remote: :true do |f| %>
 
-                                <%= f.hidden_field :product_id, :value => item.product.id%>
-                                <%= f.number_field :quantity, :value => item.quantity.to_i%>
+                                <%= f.hidden_field :product_id, :value => item.product.id %>
+                                <%= f.number_field :quantity, :value => item.quantity.to_i %>
 
-                              <td><%= f.submit "Actualise ton panier"%></td>
+                              <td><%= f.submit "Actualise ton panier", class: 'btn btn-outline-info'%></td>
                              
                             <% end %>
                             <% end %>
-                        <td><%= link_to "Remove Items", order_item_path(item), method: :delete, remote: :true %></td>
+                        <td><%= link_to "Supprimer", order_item_path(item), method: :delete, remote: :true, class: 'btn btn-outline-danger' %></td>
                     </tr> <td>Subtotal: <%= item.total %></td>
-                    <% end %>
+                <% end %>
+                <tfoot>
+                <tr >
                 
+                <td colspan="2" class="hidden-xs"></td>
+                <td  class="hidden-xs text-center" style="width:10%;">
+                   
+                </td>
+                
+                </tr>
+            </tfoot> 
                 
             </table>
+            <td>
         </div>
     </div>
-</div>              
-<h3>Ton panier est de: <%= current_order.subtotal %>€</h3>
+</div>       
+<div>       
+<h3>Ton panier est de: <%= current_order.subtotal %>€ 
+<%= button_to "Payer", new_charge_path, class:"btn btn-success", :method => :get %></h3>
+</div>
+

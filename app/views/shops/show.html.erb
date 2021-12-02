@@ -38,13 +38,13 @@
             </div>
         </div>
 
-       
+            <div class="form-edit">
                 <%= form_for @order_item, remote: true  do |f|%>
                     <%= f.hidden_field :product_id, :value => @product.id %>
                     <%= f.number_field :quantity, :value => 1, :min =>  1%>
-                <%= f.submit "Add to Card "%>
+                <%= f.submit "Ajouter au panier ",class: 'btn btn-outline-success' %>
                 <% end %>
-           
+            </div>
                       
              
                 <div id="card">

@@ -32,7 +32,7 @@
     
    <% if current_user %>
     <li><%= link_to "Mon profil", users_show_path, class: 'nav-link' %></li>
-    <li><%= button_to "Déconnexion", root_path,  method: :delete, class: 'btn btn-outline-danger', style: "margin: 10px" %></li>
+    <li><%= button_to "Déconnexion", destroy_user_session_path(current_user),  method: :delete, class: 'btn btn-outline-danger', style: "margin: 10px" %></li>
     
     
 

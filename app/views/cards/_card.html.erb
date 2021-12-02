@@ -1,1 +1,6 @@
-<%= link_to "#{current_order.order_items.size} items with value of #{current_order.subtotal} €", cards_show_path %>
+<%= link_to "#{current_order.order_items.size} photos dans votre panier, le total est de : #{current_order.subtotal} €", cards_show_path %>
+<center>
+<div class="margin" style="margin-top: 30px;">
+<%= link_to "Voir mon panier", cards_show_path, class: 'btn btn-outline-info' %>
+</div>
+</center>

@@ -38,13 +38,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://images.pexels.com/photos/248280/pexels-photo-248280.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="First slide"> 
+                        <img class="d-block w-100" src="https://images.pexels.com/photos/2061057/pexels-photo-2061057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="First slide"> 
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Second slide">
+                        <img class="d-block w-100" src="https://images.pexels.com/photos/1576193/pexels-photo-1576193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="https://images.pexels.com/photos/266784/pexels-photo-266784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Third slide">
+                        <img class="d-block w-100" src="https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -60,43 +60,53 @@
         </div>
         <div class="col-12 col-md-3">
             <div class="card">
-                <div class="card-header bg-light text-white text-uppercase">
+                <div class="card-header bg-light text-info text-uppercase">
                     <i class="fa fa-heart"></i> Top Carte !
                 </div>
-                <img class="img-fluid border-0" src="https://images.pexels.com/photos/2061057/pexels-photo-2061057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title text-center"><a title="View Product">Product title</a></h4>
-                    <div class="row">
-                        <div class="col">
-                           <p class="btn btn-info btn-block">25.00 $</p> 
-
-                        </div>
-                        <div class="col">
-                            <a><%=link_to "Voir la carte", shops_path(),  class: 'btn btn-outline-secondary'%></a>                                             
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="card-header bg-light text-white text-uppercase">
-                    <i class="fa fa-heart"></i> Top Carte !
-                </div>
-                <img class="img-fluid border-0" src="https://images.pexels.com/photos/8538273/pexels-photo-8538273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title text-center"><a href="product.html" title="View Product">Product title</a></h4>
-                    <div class="row">
-                        <div class="col">
-                           <p class="btn btn-info btn-block">25.00 $</p> 
-
-                        </div>
-                        <div class="col">
-                             <a><%=link_to "Voir la carte", shops_path(),  class: 'btn btn-outline-secondary'%></a>                                                
-                        </div>
-                    </div>
-                </div>
+                <% @products.each_with_index do |product, index| %>   
+                    <% if index  > 10 && index < 12 %>
+                                  <img class="img-fluid border-0" src="<%= product.image_url %>" alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title"><a href="product.html" title="View Product"><%= product.title %></a></h4>
+                                      <p class="card-text"><%= product.description %></p>
+                                      <div class="row">
+                                          <div class="col">
+                                              <p class="btn btn-info btn-block"><%= product.price %> €</p>
+                                          </div>
+                                          <div class="col">
+                                             <a><%=link_to "Voir la carte", shop_path(product), class: 'btn btn-outline-secondary' %></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                    <% end %>
+                <% end %>
             </div>
         </div>
-    </div>
-    
+        <div class="col-12 col-md-3">
+            <div class="card">
+                <div class="card-header bg-light text-info text-uppercase">
+                    <i class="fa fa-heart"></i> Top Carte !
+                </div>
+                <% @products.each_with_index do |product, index| %>
+                    <% if index  > 12 && index < 14 %>
+                                  <img class="img-fluid border-0" src="<%= product.image_url %>" alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title"><a href="product.html" title="View Product"><%= product.title %></a></h4>
+                                      <p class="card-text"><%= product.description %></p>
+                                      <div class="row">
+                                          <div class="col">
+                                              <p class="btn btn-info btn-block"><%= product.price %> €</p>
+                                          </div>
+                                          <div class="col">
+                                             <a><%=link_to "Voir la carte", shop_path(product), class: 'btn btn-outline-secondary' %></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                    <% end %>
+                <% end %>
+            </div>    
+        </div>
+    </div>   
 </div>
 
 
@@ -110,7 +120,7 @@
                     <div class="row">
                       <% @products.each_with_index do |product, index| %>
                     
-                     <% if index  > 3 && index < 8 %>
+                     <% if index  > 0 && index < 5 %>
                           <div class="col-sm">
                               <div class="card">
                                   <img class="card-img-top" src="<%= product.image_url %>" alt="Card image cap">
@@ -227,7 +237,7 @@
                       <div class="row">
                 <% @products.each_with_index do |product, index| %>
                     
-                     <% if index < 12 && index > 7 %>
+                     <% if index < 25 && index > 13 %>
                           <div class="col-sm">
                               <div class="card">
                                   <img class="card-img-top" src="<%= product.image_url %>" alt="Card image cap">
@@ -419,11 +429,36 @@
         <div class="col-sm">
             <div class="card-header bg-danger text-white text-uppercase">
                     <i class="fa fa-heart"></i> nos promotions ! -50%
-                </div>
-                
+                </div>              
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm">
+                        <% @products.each_with_index do |product, index| %>
+                    
+                     <% if index  > 5 && index < 10 %>
+                          <div class="col-sm">
+                              <div class="card">
+                                  <img class="card-img-top" src="<%= product.image_url %>" alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title"><a href="product.html" title="View Product"><%= product.title %></a></h4>
+                                      <p class="card-text"><%= product.description %></p>
+                                      <div class="row">
+                                          <div class="col">
+                                              <p class="btn btn-info btn-block"><%= product.price %> €</p>
+                                          </div>
+                                          <div class="col">
+                                          <a><%=link_to "Voir la carte", shop_path(product), class: 'btn btn-outline-secondary' %></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                     <% end %>
+                     <% end %>
+                
+
+
+
+                        <!--<div class="col-sm">
                             <div class="card">
                                 <img class="card-img-top" src="https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
                                 <div class="card-body">
@@ -490,7 +525,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             

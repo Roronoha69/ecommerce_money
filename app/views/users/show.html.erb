@@ -3,12 +3,12 @@
   <%= csrf_meta_tags %>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<body>
+<body style="background-image: linear-gradient(to right top, #f2f875, #a0f796, #44eec3, #00dee8, #0ac9f8, #3bc6f9, #55c2f9, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);">
 
     <!-- Main -->
     <div class="main">
         <h2>Vos Informations</h2>
-        <a><%=link_to "Editer le profil", edit_user_registration_path, class: 'btn btn-outline-success' %></a>
+        <a><%=link_to "Editer le profil", edit_user_registration_path, class: 'btn btn-success' %></a>
         <div class="card-flow">
             <div class="card-body">
                 <i class="fa fa-pen fa-xs edit"></i>
@@ -23,17 +23,17 @@
                         <tr>
                             <td>Nom</td>
                             
-                            <td>: </td>
+                            <td>: <%= current_user.name %></td>
                         </tr>
                         <tr>
                             <td>Prénom</td>
                             
-                            <td>: </td>
+                            <td>: <%= current_user.first_name %></td>
                         </tr>
                         <tr>
                             <td>Adresse</td>
                             
-                            <td>: </td>
+                            <td>: <%= current_user.address %></td>
                         </tr>
                     </tbody>
                 </table>
@@ -51,7 +51,7 @@
     <!-- End -->
 <center>
 <div class="margin" style="margin-bottom: 100px;">
-<%= link_to "Retour accueil", :back, class: 'btn btn-outline-info' %>
+<%= link_to "Retour accueil", root_path, class: 'btn btn-primary' %>
 </div>
 </center>
 
